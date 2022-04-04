@@ -1,0 +1,103 @@
+﻿
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <!-- META DATA -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!--font-family-->
+    <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <title>Travel</title>
+    <link rel="shortcut icon" type="image/icon" href="~/Logo/favicon.png" />
+    <link rel="stylesheet" href="~/CSS/font-awesome.min.css" />
+    <link rel="stylesheet" href="~/CSS/animate.css" />
+    <link rel="stylesheet" href="~/CSS/hover-min.css">
+    <link rel="stylesheet" href="~/CSS/datepicker.css">
+    <link rel="stylesheet" href="~/CSS/owl.carousel.min.css">
+    <link rel="stylesheet" href="~/CSS/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="~/CSS/jquery-ui.min.css" />
+    <link rel="stylesheet" href="~/CSS/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/CSS/bootsnav.css" />
+    <link rel="stylesheet" href="~/CSS/style.css" />
+    <link rel="stylesheet" href="~/CSS/responsive.css" />
+
+    <style>
+        #font a {
+            color: white;
+            transition: 0.6s;
+        }
+
+            #font a:hover {
+                color: orange;
+                transition: 0.6s;
+            }
+
+        #logo a {
+            color: aqua;
+            transition: 0.6s;
+        }
+
+            #logo a span:hover {
+                color: aqua;
+                transition: 0.6s;
+            }
+
+            #logo a:hover {
+                color: orange;
+                transition: 0.6s;
+            }
+    </style>
+</head>
+<body>
+    <header class="top-area">
+        <div style="background-color: black" class="header-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div id="logo" class="logo">
+                            <a href="@Url.Action("TrangChu", "Home")">
+                                Tour<span>LH</span>
+                            </a>
+                        </div><!-- /.logo-->
+                    </div><!-- /.col-->
+                    <div class="col-sm-10">
+                        <div class="main-menu">
+
+                            <!-- Brand and toggle get grouped for better mobile display -->
+                            <div class="navbar-header">
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <i class="fa fa-bars"></i>
+                                </button><!-- / button-->
+                            </div><!-- /.navbar-header-->
+                            <div class="collapse navbar-collapse">
+                                <ul class="nav navbar-nav navbar-right">
+                                    <li id="font" class="smooth-menu"><a href="@Url.Action("TrangChu", "Home")"><b>Trang Chủ</b></a></li>
+                                    <li id="font" class="smooth-menu"><a href="@Url.Action("DuLichMB", "DuLich")"><b>Miền Bắc</b></a></li>
+                                    <li id="font" class="smooth-menu"><a href="@Url.Action("DuLichMT", "DuLich")"><b>Miền Trung</b> </a></li>
+                                    <li id="font" class="smooth-menu"><a href="@Url.Action("DuLichMN", "DuLich")"><b>Miền Nam</b></a></li>
+                                    <li id="font" class="smooth-menu"><a href="@Url.Action("KhachSan", "DichVu")"><b>Khách Sạn</b></a></li>
+                                    <li id="font" class="smooth-menu"><a href="@Url.Action("ThueXe", "DichVu")"><b>Đặt Xe</b></a></li>
+                                    <li id="font" class="smooth-menu"><a href="@Url.Action("DangNhap", "Home")"><b> Đăng Nhập</b></a></li>
+
+                                </ul>
+                            </div><!-- /.navbar-collapse -->
+                        </div><!-- /.main-menu-->
+                    </div><!-- /.col-->
+                </div><!-- /.row -->
+                <div class="home-border"></div><!-- /.home-border-->
+            </div><!-- /.container-->
+        </div><!-- /.header-area -->
+
+    </header><!-- /.top-area-->
+    <!-- main-menu End -->
+
+    <div>
+
+        @RenderBody()
+    </div>
+</body>
+</html>

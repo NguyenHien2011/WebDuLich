@@ -1,0 +1,63 @@
+﻿@model DOANWEBDULICH.Models.VEXE
+
+@{
+    ViewBag.Title = "XoaVeXe";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+<style>
+    #lh {
+        line-height: 3.5;
+        font-size: 20px;
+    }
+</style>
+
+
+<h2>XÓA VÉ XE</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt id="lh">
+            ID VÉ
+        </dt>
+
+        <dd  id="lh">
+            @Html.DisplayFor(model => model.IDVEXE)
+        </dd>
+        <dt  id="lh">
+            NGÀY XUẤT PHÁT
+        </dt>
+
+        <dd  id="lh">
+            @Html.DisplayFor(model => model.NGAYXP)
+        </dd>
+
+        <dt  id="lh">
+            KHÁCH HÀNG
+        </dt>
+
+        <dd  id="lh">
+            @Html.DisplayFor(model => model.KHACHHANG.TENKH)
+        </dd>
+
+        <dt  id="lh">
+            PHƯƠNG TIỆN
+        </dt>
+
+        <dd  id="lh">
+            @Html.DisplayFor(model => model.PHUONGTIEN.TENPT)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "VeXe")
+        </div>
+    }
+</div>

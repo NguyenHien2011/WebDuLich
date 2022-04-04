@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "VeKS";
+    Layout = "~/Views/Layout/Nav.cshtml";
+}
+
+
+@using DOANWEBDULICH.Models
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/CSS/TTinKH.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="div3">
+        <h2 style="text-align: center;padding-top: 150px"> THÔNG TIN KHÁCH ĐĂT</h2>
+        @{
+            KHACHHANG kh = (KHACHHANG)Session["Taikhoan"];
+
+        }
+        <table align="center">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <tr style="height: 40px"> 
+                    <td class="123" style="padding-right: 50px">
+                        Họ tên
+                    </td>
+                    <td >
+                        @kh.TENKH
+                    </td>
+                </tr>
+                <tr style="height: 40px">
+                    <td class="123" style="padding-right: 50px">
+                        Số Điện Thoại
+                    </td>
+                    <td >
+                        @kh.SDT
+                    </td>
+                </tr>
+                <tr style="height: 40px">
+                    <td class="123" style="padding-right: 50px">
+                        CMND
+                    </td>
+                    <td >
+                        @kh.CMND
+                    </td>
+                </tr>
+
+                <tr style="height: 40px">
+                    <td class="123" style="padding-right: 50px">
+                        EMAIL
+                    </td>
+                    <td >
+                        @kh.EMAIL
+                    </td>
+                </tr>
+
+                <tr style="height: 40px">
+                    <td class="123" style="padding-right: 50px">
+                    </td>
+                    <td >
+                        <input class="hover" type="submit" name="name" value="Đồng ý đặt" />
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+</body>
+</html>
+
+
+

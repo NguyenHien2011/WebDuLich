@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Layout/Nav.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/CSS/Loginhihi.css" rel="stylesheet" />
+</head>
+<body>
+    <h2 style="text-align: center; padding-top: 150px">
+        ĐĂNG NHẬP
+    </h2>
+    <div class="div2">
+        <h4 style="color: red "> @ViewBag.Thongbao</h4>
+        <table style="text-align: center; width:50%;height:100px">
+
+            @using (Html.BeginForm())
+
+            {
+                @Html.ValidationSummary(true)
+                <tr style="height: 40px">
+                    <td class="123" > Tên Đăng Nhập</td>
+                    <td>
+                        @Html.TextBox("TenDN")
+                        @ViewData["Loi1"]
+                    </td>
+                </tr>
+
+                <tr style="height: 40px">
+                    <td class="123" > Nhập Mật Khẩu</td>
+                    <td>
+                        @Html.Password("MatKhau")
+                        @ViewData["Loi2"]
+                    </td>
+                </tr>
+                <tr style="height: 40px">
+                    <td></td>
+                    <td>
+                        <input class="hover" type="submit" name="name" value="Đăng Nhập" />
+                    </td>
+                    <td>
+                        <a href="@Url.Action("DangKy", "Home")">Chưa có tài khoản</a>
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+

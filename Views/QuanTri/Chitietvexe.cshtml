@@ -1,0 +1,57 @@
+﻿@model DOANWEBDULICH.Models.VEXE
+
+@{
+    ViewBag.Title = "Chitietvexe";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+
+}
+
+<style>
+    #lh {
+        line-height: 3.5;
+        font-size: 20px;
+    }
+</style>
+
+<h2>CHI TIẾT VÉ</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt id="lh">
+            ID VÉ
+        </dt>
+
+        <dd id="lh">
+            @Html.DisplayFor(model => model.IDVEXE)
+        </dd>
+        <dt id="lh">
+            NGÀY XUẤT PHÁT
+        </dt>
+
+        <dd id="lh">
+            @Html.DisplayFor(model => model.NGAYXP)
+        </dd>
+
+        <dt id="lh">
+            KHÁCH HÀNG
+        </dt>
+
+        <dd id="lh">
+            @Html.DisplayFor(model => model.KHACHHANG.TENKH)
+        </dd>
+
+        <dt id="lh">
+            PHƯƠNG TIỆN
+        </dt>
+
+        <dd id="lh">
+            @Html.DisplayFor(model => model.PHUONGTIEN.TENPT)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "VeXe")
+</p>

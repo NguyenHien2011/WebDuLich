@@ -1,0 +1,48 @@
+﻿@model DOANWEBDULICH.Models.VEPHONG
+
+@{
+    ViewBag.Title = "Chitietdon";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<style>
+    #lh {
+        line-height: 3.5;
+        font-size: 20px;
+    }
+</style>
+
+<h2>CHI TIẾT ĐƠN</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt id="lh">
+            ID ĐƠN
+        </dt>
+
+        <dd  id="lh">
+            @Html.DisplayFor(model => model.IDDON)
+        </dd>
+
+        <dt  id="lh">
+            KHÁCH HÀNG
+        </dt>
+
+        <dd  id="lh">
+            @Html.DisplayFor(model => model.KHACHHANG.TENKH)
+        </dd>
+
+        <dt  id="lh">
+            KHÁCH SẠN
+        </dt>
+
+        <dd  id="lh">
+            @Html.DisplayFor(model => model.KHACHSAN.TENKS)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "DonDatPhong")
+</p>

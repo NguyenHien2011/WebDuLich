@@ -1,0 +1,91 @@
+﻿@using DOANWEBDULICH.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<DOANWEBDULICH.Models.KHACHSAN>
+
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+<meta charset="utf-8">
+@{
+    ViewBag.Title = "KhachSan";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2>KHÁCH SẠN</h2>
+
+<p>
+    @Html.ActionLink("THÊM KHÁCH SẠN MỚI", "ThemmoiKS")
+</p>
+<table class="table">
+    <tr>
+        <th style="width:80px"> ID KS </th>
+        <th style="width:100px"> Khách Sạn </th>
+        <th style="width:100px">  Địa Chỉ  </th>
+        <th style="width:100px">  SĐT  </th>
+        <th style="width:100px">  Giá </th>
+        <th style="width:120px">  Ảnh</th>
+        <th style="width:100px"> Miền </th>
+        <th style="width:100px">  Tình Trạng </th>
+        <th style="width:400px"> Mô Tả </th>
+        <th style="width:160px">  </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDKS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TENKS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIACHI)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SDTKS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GIA)
+            </td>
+            <td>
+                <img src="@Url.Content("~/PIC/PicHome/KsPic/"+  item.ANH)" width="120px" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MIEN.TENMIEN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TINHTRANG)
+            </td>
+            <td>
+                @Truncate(item.MOTA, 100)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "SuaKS", new { id = item.IDKS }) |
+                @Html.ActionLink("Chi Tiết", "Chitietks", new { id = item.IDKS }) |
+                @Html.ActionLink("Xóa", "XoaKS", new { id = item.IDKS })
+            </td>
+        </tr>
+    }
+
+</table>
+@* Tao liên kết các trang  *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("KhachSan", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

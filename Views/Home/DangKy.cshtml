@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Layout/Nav.cshtml";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="~/CSS/LoginResgi.css" rel="stylesheet" />
+</head>
+<body>
+    <h2 style="text-align: center; padding-top: 150px; color:blue"> Đăng Ký Thành Viên</h2>
+    <div class="div1">
+        <table style="padding: 150px">
+
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true)
+                <tr style="height: 40px; color: blue">
+                    <td class="123"> Họ Tên </td>
+                    <td>
+                        @Html.TextBox("TenKH")
+                        @ViewData["Loi1"]
+                    </td>
+                </tr>
+
+                <tr style="height: 40px; color: blue">
+                    <td class="123"> Tên Đăng Nhập</td>
+                    <td>
+                        @Html.TextBox("TenDN")
+                        @ViewData["Loi2"]
+                    </td>
+                </tr>
+
+                <tr style="height: 40px; color: blue">
+                    <td class="123"> Mật Khẩu </td>
+                    <td>
+                        @Html.Password("MatKhau")
+                        @ViewData["Loi3"]
+                    </td>
+                </tr>
+
+                <tr style="height: 40px; color: blue">
+                    <td class="123">Nhập Lại Mật Khẩu </td>
+                    <td>
+                        @Html.Password("NhapLaiMatKhau")
+                        @ViewData["Loi4"]
+                    </td>
+                </tr>
+
+                <tr style="height: 40px; color: blue">
+                    <td class="123"> CMND</td>
+                    <td>
+                        @Html.TextBox("CMND")
+                        @ViewData["Loi5"]
+                    </td>
+                </tr>
+
+                <tr style="height: 40px; color: blue">
+                    <td class="123">Phone </td>
+                    <td>
+                        @Html.TextBox("SDT")
+                        @ViewData["Loi6"]
+                    </td>
+                </tr>
+
+                <tr style="height: 40px; color: blue">
+                    <td class="123"> Gmail </td>
+                    <td>
+                        @Html.TextBox("EMAIL")
+                        @ViewData["Loi7"]
+                    </td>
+                </tr>
+
+                <tr style=" padding-top: 5px">
+                    <td><input class="hover" type="submit" value="Đăng Ký"></td>
+
+                </tr>
+            }
+
+        </table>
+
+    </div>
+
+
+</body>
+</html>
+
+
+
+
+

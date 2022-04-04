@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TOURDL" Class="dbQLDuLichDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-N39M8DK\SQLEXPRESS;Initial Catalog=TOURDL;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TOURDLConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Admins" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="UserAdmin" Type="System.String" DbType="VarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PassAdmin" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Hoten" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
+    <Type Name="KHACHHANG">
+      <Column Name="IDKH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="TENKH" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Taikhoan" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Matkhau" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CMND" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="SDT" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Association Name="KHACHHANG_VEPHONG" Member="VEPHONGs" ThisKey="IDKH" OtherKey="IDKH" Type="VEPHONG" />
+      <Association Name="KHACHHANG_VETOUR" Member="VETOURs" ThisKey="IDKH" OtherKey="IDKH" Type="VETOUR" />
+      <Association Name="KHACHHANG_VEXE" Member="VEXEs" ThisKey="IDKH" OtherKey="IDKH" Type="VEXE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.KHACHSAN" Member="KHACHSANs">
+    <Type Name="KHACHSAN">
+      <Column Name="IDKS" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENKS" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="DIACHI" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SDTKS" Type="System.String" DbType="VarChar(22)" CanBeNull="true" />
+      <Column Name="GIA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="ANH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDMIEN" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="TINHTRANG" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="MOTA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="KHACHSAN_VEPHONG" Member="VEPHONGs" ThisKey="IDKS" OtherKey="IDKS" Type="VEPHONG" />
+      <Association Name="MIEN_KHACHSAN" Member="MIEN" ThisKey="IDMIEN" OtherKey="IDMIEN" Type="MIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOAITOUR" Member="LOAITOURs">
+    <Type Name="LOAITOUR">
+      <Column Name="IDLOAI" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENLOAI" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Association Name="LOAITOUR_TOURDULICH" Member="TOURDULICHes" ThisKey="IDLOAI" OtherKey="IDLOAI" Type="TOURDULICH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MIEN" Member="MIENs">
+    <Type Name="MIEN">
+      <Column Name="IDMIEN" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENMIEN" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Association Name="MIEN_KHACHSAN" Member="KHACHSANs" ThisKey="IDMIEN" OtherKey="IDMIEN" Type="KHACHSAN" />
+      <Association Name="MIEN_TOURDULICH" Member="TOURDULICHes" ThisKey="IDMIEN" OtherKey="IDMIEN" Type="TOURDULICH" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHUONGTIEN" Member="PHUONGTIENs">
+    <Type Name="PHUONGTIEN">
+      <Column Name="IDPT" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENPT" Type="System.String" DbType="NVarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="LOAIPT" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="SUCCHUA" Type="System.String" DbType="VarChar(2)" CanBeNull="true" />
+      <Column Name="ANH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MOTA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Association Name="PHUONGTIEN_VEXE" Member="VEXEs" ThisKey="IDPT" OtherKey="IDPT" Type="VEXE" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TOURDULICH" Member="TOURDULICHes">
+    <Type Name="TOURDULICH">
+      <Column Name="IDTOUR" Type="System.String" DbType="Char(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TENTOUR" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="ANH" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GIA" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="SONGAY" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="MOTA" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="NGAYXUATPHAT" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="DIEMDL" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDLOAI" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDMIEN" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Association Name="TOURDULICH_VETOUR" Member="VETOURs" ThisKey="IDTOUR" OtherKey="IDTOUR" Type="VETOUR" />
+      <Association Name="LOAITOUR_TOURDULICH" Member="LOAITOUR" ThisKey="IDLOAI" OtherKey="IDLOAI" Type="LOAITOUR" IsForeignKey="true" />
+      <Association Name="MIEN_TOURDULICH" Member="MIEN" ThisKey="IDMIEN" OtherKey="IDMIEN" Type="MIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VEPHONG" Member="VEPHONGs">
+    <Type Name="VEPHONG">
+      <Column Name="IDDON" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDKS" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Association Name="KHACHHANG_VEPHONG" Member="KHACHHANG" ThisKey="IDKH" OtherKey="IDKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="KHACHSAN_VEPHONG" Member="KHACHSAN" ThisKey="IDKS" OtherKey="IDKS" Type="KHACHSAN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VETOUR" Member="VETOURs">
+    <Type Name="VETOUR">
+      <Column Name="IDVE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="IDTOUR" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Column Name="IDKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="KHACHHANG_VETOUR" Member="KHACHHANG" ThisKey="IDKH" OtherKey="IDKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="TOURDULICH_VETOUR" Member="TOURDULICH" ThisKey="IDTOUR" OtherKey="IDTOUR" Type="TOURDULICH" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.VEXE" Member="VEXEs">
+    <Type Name="VEXE">
+      <Column Name="IDVEXE" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NGAYXP" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="IDKH" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IDPT" Type="System.String" DbType="Char(3)" CanBeNull="true" />
+      <Association Name="KHACHHANG_VEXE" Member="KHACHHANG" ThisKey="IDKH" OtherKey="IDKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="PHUONGTIEN_VEXE" Member="PHUONGTIEN" ThisKey="IDPT" OtherKey="IDPT" Type="PHUONGTIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

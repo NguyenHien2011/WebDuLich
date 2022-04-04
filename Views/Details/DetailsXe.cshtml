@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "DetailsKS";
+    Layout = "~/Views/Layout/Nav.cshtml";
+}
+
+
+@model IEnumerable<DOANWEBDULICH.Models.PHUONGTIEN>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+    <style type="text/css">
+        #Datve a {
+            clear: both;
+            background-color: black;
+            color: white;
+            width: 120px;
+            height: 35px;
+            display: block;
+            float: right;
+            text-align: center;
+            padding-top: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.6s;
+            border-radius: 5px;
+        }
+
+            #Datve a:hover {
+                background-color: black;
+                color: orange;
+                transition: 0.6s;
+            }
+    </style>
+
+</head>
+<body>
+    @foreach (var XeThue in Model)
+    {
+        <div style="padding-top: 100px"
+             class="container">
+
+            <div class="row">
+
+                <!-- Post Content Column -->
+                <div class="col-lg-8">
+
+                    <!-- Title -->
+                    <h1 class="mt-4">@XeThue.TENPT</h1> <!-- Tên Xe -->
+                    <!-- Author -->
+                    <p class="lead">
+                        Kiểu Xe :
+                        <a href="#">@XeThue.LOAIPT</a> <!--Đường dẫn đến Xe đó ( lấy trên gg ) --Loai PT ( bao nhiêu slot-->
+                    </p>
+
+
+                    <hr>
+
+                    <!-- Preview Image -->
+                    <img class="img-fluid rounded" src="~/PIC/PicHome/XePic/@XeThue.ANH" alt="">
+
+                    @*<img style=" width: 300px; height: 150px ; padding-top: 5px ; float: left" class="img-fluid rounded" src="~/PIC/PicDetail/Xe/@XeThue.ANH" alt="">
+                    <img style=" width: 250px; height: 150px ; padding: 5px 0px 0px 5px ;" class="img-fluid rounded" src="~/PIC/PicDetail/Xe/@XeThue.ANH" alt="">
+                    <img style=" width: 195px; height: 150px ; padding: 5px 0px 0px 5px " class="img-fluid rounded" src="~/PIC/PicDetail/Xe/@XeThue.ANH" alt="">*@
+                    
+                    <hr>
+
+                    <!-- Mô Tả -->
+                    <p style="text-indent:100px ; font-family: Arial ; font-size: large" class="lead">@XeThue.MOTA</p>
+
+                    <div>
+                        <div id="Datve" style="padding: 30px">
+                            <h4 style="color: red"> Trang WEB Do sinh viên làm vì vậy hãy nhấn thêm vào giỏ để không bị lỗi !!!</h4>
+                            <a href="@Url.Action("ThemiBus", "DatVe", new { @iIDPT = XeThue.IDPT, @strURL = Request.Url.ToString() })">Thêm Vào Giỏ</a>
+                        </div>
+                        <div id="Datve" style="padding: 30px">
+                            <a href="@Url.Action("MuaVeXe", "DatVe", new { id = XeThue.IDPT })">Đặt Vé</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+
+    }
+
+</body>
+</html>
+

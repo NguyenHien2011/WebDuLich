@@ -1,0 +1,93 @@
+﻿@using DOANWEBDULICH.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<DOANWEBDULICH.Models.TOURDULICH>
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+
+@{
+    ViewBag.Title = "Chi Tiết Du Lịch";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+<h2>QUẢN LÝ THÔNG TIN TOUR</h2>
+<p>
+    @Html.ActionLink("THÊM MỚI", "ThemmoiTour")
+</p>
+<table class="table" border="1">
+    <tr>
+        <th style="width:80px"> ID Tour </th>
+        <th style="width:200px">  Du Lịch </th>
+        <th style="width:100px">  Giá  </th>
+        <th style="width:400px">  Mô tả    </th>
+        <th style="width:120px">  Ảnh </th>
+        <th style="width:80px">  Số Ngày</th>
+        <th style="width:100px"> Ngày Xuất Phát </th>
+        <th style="width:170px">  Điểm Du Lịch </th>
+        <th style="width:70px"> Loại </th>
+        <th style="width:65px">Miền </th>
+        <th style="width:160px">  </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.IDTOUR)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TENTOUR)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.GIA)
+    </td>
+    <td>
+        @Truncate(item.MOTA, 100)
+    </td>
+    <td>
+        <img src="@Url.Content("~/PIC/PicHome/TourPic/"+  item.ANH)" width="120px" />
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.SONGAY)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.NGAYXUATPHAT)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DIEMDL)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LOAITOUR.TENLOAI)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.MIEN.TENMIEN)
+    </td>
+
+
+    <td>
+        @Html.ActionLink("Sửa", "SuaTour", new { id = item.IDTOUR }) |
+        @Html.ActionLink("Chi tiết", "Chitiettour", new { id = item.IDTOUR }) |
+        @Html.ActionLink("Xóa", "XoaTour", new { id = item.IDTOUR })
+    </td>
+</tr>
+    }
+</table>
+@* Tao liên kết các trang  *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("DuLich", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

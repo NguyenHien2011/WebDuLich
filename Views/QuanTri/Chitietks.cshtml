@@ -1,0 +1,88 @@
+﻿@model DOANWEBDULICH.Models.KHACHSAN
+
+@{
+    ViewBag.Title = "Chitietks";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2>CHI TIẾT KHÁCH SẠN</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID KHÁCH SẠN
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDKS)
+        </dd>
+
+        <dt>
+            KHÁCH SẠN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENKS)
+        </dd>
+
+        <dt>
+            ĐỊA CHỈ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+        <dt>
+            SỐ ĐIỆN THOẠI
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTKS)
+        </dd>
+
+        <dt>
+           GIÁ
+        </dt>
+
+        <dd>
+            @string.Format("{0:0 }", Model.GIA) VNĐ
+        </dd>
+
+        <dt>
+            ẢNH
+        </dt>
+
+        <dd>
+            <img style="width: 50%" src="@Url.Content("~/PIC/PicHome/KsPic/"+ Model.ANH)" alt="Alternate Text" />
+        </dd>
+
+        <dt>
+            MIỀN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDMIEN)
+        </dd>
+
+        <dt>
+            TÌNH TRẠNG
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINHTRANG)
+        </dd>
+
+        <dt>
+            MÔ TẢ
+        </dt>
+
+        <dd style="width: 600px; text-align: justify">
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "KhachSan")
+</p>

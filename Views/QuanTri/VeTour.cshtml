@@ -1,0 +1,62 @@
+﻿@using DOANWEBDULICH.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<DOANWEBDULICH.Models.VETOUR>
+
+
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+@{
+    ViewBag.Title = "VeTour";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2>VÉ TOUR</h2>
+
+<table class="table">
+    <tr>
+        <th style="width:300px"> ID TOUR </th>
+        <th style="width: 300px"> KHÁCH HÀNG </th>
+        <th style="width: 300px">  TOUR  </th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDVE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TOURDULICH.TENTOUR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KHACHHANG.TENKH)
+            </td>
+            <td>
+                @Html.ActionLink("Chi Tiết", "Chitietve", new { id = item.IDVE }) |
+                @Html.ActionLink("Xóa", "XoaVeTour", new { id = item.IDVE })
+            </td>
+        </tr>
+    }
+
+</table>
+@* Tao liên kết các trang  *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("VeTour", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

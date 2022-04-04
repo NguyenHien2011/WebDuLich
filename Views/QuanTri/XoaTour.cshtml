@@ -1,0 +1,102 @@
+﻿@model DOANWEBDULICH.Models.TOURDULICH
+
+@{
+    ViewBag.Title = "XoaTour";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2>XÓA TOUR DU LỊCH</h2>
+
+<h3>CHẮC CHẮN XÓA ?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID TOUR:
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.IDTOUR)
+        </dd>
+
+        <dt>
+            TOUR
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.TENTOUR)
+        </dd>
+
+        <dt>
+            ẢNH
+        </dt>
+        <dd>
+            <img style="width: 50%" src="@Url.Content("~/PIC/PicHome/TourPic/"+ Model.ANH)" alt="Alternate Text" />
+        </dd>
+
+        <dt>
+            GIÁ
+        </dt>
+
+        <dd>
+            @string.Format("{0:0 }", Model.GIA) VNĐ
+        </dd>
+
+        <dt>
+            SỐ NGÀY
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SONGAY) NGÀY
+        </dd>
+
+        <dt>
+            MÔ TẢ
+        </dt>
+
+        <dd style="width: 600px; text-align: justify">
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+        <dt>
+            NGÀY XUẤT PHÁT
+        </dt>
+
+        <dd>
+            @string.Format("{0:dd/mm/yyyy}", Model.NGAYXUATPHAT)
+        </dd>
+
+        <dt>
+            ĐỊA ĐIỂM
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIEMDL)
+        </dd>
+
+        <dt>
+            LOẠI DU LỊCH
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDLOAI)
+        </dd>
+
+        <dt>
+            MIỀN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDMIEN)
+        </dd>
+
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Dulich")
+        </div>
+    }
+</div>

@@ -1,0 +1,98 @@
+﻿@model DOANWEBDULICH.Models.KHACHSAN
+
+@{
+    ViewBag.Title = "XoaKS";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2>XÓA KHÁCH SẠN</h2>
+
+<h3>CHẮC CHẮN XÓA ?</h3>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID KHÁCH SẠN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENKS)
+        </dd>
+        <dt>
+            KHÁCH SẠN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENKS)
+        </dd>
+
+        <dt>
+            ĐỊA CHỈ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DIACHI)
+        </dd>
+
+        <dt>
+            SỐ ĐIỆN THOẠI
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SDTKS)
+        </dd>
+
+        <dt>
+            GIÁ
+        </dt>
+
+        <dd>
+            @string.Format("{0:0 }", Model.GIA) VNĐ
+        </dd>
+
+        <dt>
+            ẢNH
+        </dt>
+
+        <dd>
+            <img style="width: 50%" src="@Url.Content("~/PIC/PicHome/KsPic/"+ Model.ANH)" alt="Alternate Text" />
+        </dd>
+
+        <dt>
+            MIỀN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDMIEN)
+        </dd>
+
+        <dt>
+            TÌNH TRẠNG
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TINHTRANG)
+        </dd>
+
+        <dt>
+            MÔ TẢ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Xác Nhận Xóa" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "KhachSan")
+        </div>
+    }
+</div>

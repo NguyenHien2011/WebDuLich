@@ -1,0 +1,96 @@
+﻿@model IEnumerable<DOANWEBDULICH.Models.TOURDULICH>
+
+@{
+    ViewBag.Title = "DetailsDL";
+    Layout = "~/Views/Layout/Nav.cshtml";
+}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title></title>
+    <style type="text/css">
+        #Datve a {
+            clear: both;
+            background-color: black;
+            color: white;
+            width: 120px;
+            height: 35px;
+            display: block;
+            float: right;
+            text-align: center;
+            padding-top: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.6s;
+            border-radius: 5px;
+        }
+
+            #Datve a:hover {
+                background-color: black;
+                color: orange;
+                transition: 0.6s;
+            }
+    </style>
+
+</head>
+<body>
+    <!-- Page Content -->
+    @foreach (var TOURDULICH in Model)
+    {
+        <div style="padding-top: 100px"
+             class="container">
+
+            <div class="row">
+
+                <!-- Post Content Column -->
+                <div class="col-lg-8">
+
+                    <!-- Title -->
+                    <h1 class="mt-4">@TOURDULICH.TENTOUR</h1> <!-- Tên Du Lịch -->
+                    <!-- Author -->
+                    <p class="lead">
+                        Địa Điểm
+                        <a href="#">@TOURDULICH.DIEMDL</a> <!-- Địa Điểm -->
+                    </p>
+
+                    <hr>
+
+                    <!-- Date/Time -->
+                    <p> SỐ NGÀY @TOURDULICH.SONGAY NGÀY / NGÀY XUẤT PHÁT @TOURDULICH.NGAYXUATPHAT</p>  <!-- Số Ngày -- Ngày Xuất Phát -->
+
+                    <hr>
+
+                    <!-- Preview Image -->
+                    <img class="img-fluid rounded" src="~/PIC/PicHome/TourPic/@TOURDULICH.ANH" alt="">
+
+                    <hr>
+
+                    <!-- Post Content -->
+                    <p style="text-indent:100px ; font-family: Arial ; font-size: large" class="lead">@TOURDULICH.MOTA </p>
+
+
+                    <div>
+                        <div id="Datve" style="padding: 30px">
+                            <a href="@Url.Action("ThemiTour", "DatVe", new { @iIDTOUR = TOURDULICH.IDTOUR, @strURL = Request.Url.ToString() })">Thêm Vào Giỏ</a>
+                        </div>
+                        <div id="Datve" style="padding: 30px">
+                            <a href="@Url.Action("TourVe", "DatVe", new { id = TOURDULICH.IDTOUR })">Đặt Vé</a>
+                        </div>
+                    </div>
+                    <hr>
+                </div>
+
+            </div>
+        </div>
+
+    }
+
+</body>
+</html>
+

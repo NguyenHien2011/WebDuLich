@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11.5, 12.375" name="dbQLDuLich">
+  <DataContextMoniker Name="/dbQLDuLichDataContext" />
+  <nestedChildShapes>
+    <classShape Id="a617c291-ef57-49b2-a3d8-cd2246bbb94c" absoluteBounds="0.75, 7.75, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/dbQLDuLichDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="52c811da-ca12-4d02-ae52-a594019924f1" absoluteBounds="0.765, 8.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a8b94cf5-c4fe-45ed-aa43-45890ea46076" absoluteBounds="6.5, 7, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dbQLDuLichDataContext/KHACHHANG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="bbc16e9e-81b8-4843-8227-9cedaf87d296" absoluteBounds="6.515, 7.46, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="80f54a1a-cd78-4c79-a995-502a010f764f" absoluteBounds="3.5, 3.875, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/dbQLDuLichDataContext/KHACHSAN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="2f1e9ce1-eddf-4bdc-990e-c6e30b9c6ef1" absoluteBounds="3.515, 4.335, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="efe852c8-2d5a-4484-9ad8-d6483750baae" absoluteBounds="3.75, 1, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dbQLDuLichDataContext/LOAITOUR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e45b362-2be5-49d7-8f93-7da0f0cf253c" absoluteBounds="3.765, 1.46, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c16d3c63-c187-4293-9930-c3ad42c1bc0c" absoluteBounds="0.75, 4.5, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/dbQLDuLichDataContext/MIEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1e41ec50-9806-4411-80a6-ffe31f00a7c8" absoluteBounds="0.765, 4.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0947bd18-5b18-4b1c-891e-e5284e2f6afc" absoluteBounds="6.5, 10.125, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/dbQLDuLichDataContext/PHUONGTIEN" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1d5e4432-9e62-46bf-8f4e-2ab391cd8992" absoluteBounds="6.515, 10.585, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3138736d-4fa7-4f94-861f-37af25a76eb4" absoluteBounds="6.5, 0.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbQLDuLichDataContext/TOURDULICH" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3068fcb8-0827-4165-aae5-da84d0938a8d" absoluteBounds="6.515, 1.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4d9836af-2b22-4d1e-8643-46fec39f1f40" absoluteBounds="6.25, 4.375, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/dbQLDuLichDataContext/VEPHONG" />
+      <nestedChildShapes>
+        <elementListCompartment Id="6ef8a51e-b04f-479a-8a14-604ebbf6be95" absoluteBounds="6.265, 4.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="fd2f60a7-da7f-499a-8ae1-793a8ee7a535" absoluteBounds="9.25, 1.375, 2, 1.3862939453125003">
+      <DataClassMoniker Name="/dbQLDuLichDataContext/VETOUR" />
+      <nestedChildShapes>
+        <elementListCompartment Id="da76e129-69a1-4410-9bf1-bb2f850f42a8" absoluteBounds="9.265, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9ffa4b03-9840-4f66-bc76-3865b67e5873" absoluteBounds="9.25, 7.25, 2, 1.5785953776041675">
+      <DataClassMoniker Name="/dbQLDuLichDataContext/VEXE" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b1c24c3d-50d5-4f70-97c9-d3af333ccf3a" absoluteBounds="9.265, 7.71, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 5.09699625651042); (3.5 : 5.09699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLDuLichDataContext/MIEN/MIEN_KHACHSAN" />
+      <nodes>
+        <classShapeMoniker Id="c16d3c63-c187-4293-9930-c3ad42c1bc0c" />
+        <classShapeMoniker Id="80f54a1a-cd78-4c79-a995-502a010f764f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.75 : 1.59699625651042); (6.5 : 1.59699625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLDuLichDataContext/LOAITOUR/LOAITOUR_TOURDULICH" />
+      <nodes>
+        <classShapeMoniker Id="efe852c8-2d5a-4484-9ad8-d6483750baae" />
+        <classShapeMoniker Id="3138736d-4fa7-4f94-861f-37af25a76eb4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.75 : 4.5); (1.75 : 2.8694482421875); (6.5 : 2.8694482421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLDuLichDataContext/MIEN/MIEN_TOURDULICH" />
+      <nodes>
+        <classShapeMoniker Id="c16d3c63-c187-4293-9930-c3ad42c1bc0c" />
+        <classShapeMoniker Id="3138736d-4fa7-4f94-861f-37af25a76eb4" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(7.375 : 7); (7.375 : 5.7612939453125)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLDuLichDataContext/KHACHHANG/KHACHHANG_VEPHONG" />
+      <nodes>
+        <classShapeMoniker Id="a8b94cf5-c4fe-45ed-aa43-45890ea46076" />
+        <classShapeMoniker Id="4d9836af-2b22-4d1e-8643-46fec39f1f40" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 5.06814697265625); (6.25 : 5.06814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLDuLichDataContext/KHACHSAN/KHACHSAN_VEPHONG" />
+      <nodes>
+        <classShapeMoniker Id="80f54a1a-cd78-4c79-a995-502a010f764f" />
+        <classShapeMoniker Id="4d9836af-2b22-4d1e-8643-46fec39f1f40" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 7); (8.875 : 6.625); (8.875 : 2.06814697265625); (9.25 : 2.06814697265625)]" fixedFrom="NotFixed" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLDuLichDataContext/KHACHHANG/KHACHHANG_VETOUR" />
+      <nodes>
+        <classShapeMoniker Id="a8b94cf5-c4fe-45ed-aa43-45890ea46076" />
+        <classShapeMoniker Id="fd2f60a7-da7f-499a-8ae1-793a8ee7a535" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 1.65907348632813); (9.25 : 1.65907348632813)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLDuLichDataContext/TOURDULICH/TOURDULICH_VETOUR" />
+      <nodes>
+        <classShapeMoniker Id="3138736d-4fa7-4f94-861f-37af25a76eb4" />
+        <classShapeMoniker Id="fd2f60a7-da7f-499a-8ae1-793a8ee7a535" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 8.03929768880208); (9.25 : 8.03929768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLDuLichDataContext/KHACHHANG/KHACHHANG_VEXE" />
+      <nodes>
+        <classShapeMoniker Id="a8b94cf5-c4fe-45ed-aa43-45890ea46076" />
+        <classShapeMoniker Id="9ffa4b03-9840-4f66-bc76-3865b67e5873" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.5 : 11.1065991210937); (10.25 : 11.1065991210937); (10.25 : 8.82859537760417)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/dbQLDuLichDataContext/PHUONGTIEN/PHUONGTIEN_VEXE" />
+      <nodes>
+        <classShapeMoniker Id="0947bd18-5b18-4b1c-891e-e5284e2f6afc" />
+        <classShapeMoniker Id="9ffa4b03-9840-4f66-bc76-3865b67e5873" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,28 @@
+﻿body {
+    background-image: url(../PIC/4K/4k15.jpg) 
+}
+
+.div2{
+    padding-top: 70px;
+    padding-left: 540px;
+}
+.123 {
+    line-height: 3.5;
+    padding-right: 20px;
+    word-spacing: 5px;
+}
+
+.hover {
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+}
+
+
+    .hover:hover {
+        background-color: orange;
+        color: black;
+        transition: 0.6s;
+        border: 0;
+        border-radius: 5px;
+    }

@@ -1,0 +1,74 @@
+﻿@model DOANWEBDULICH.Models.PHUONGTIEN
+
+@{
+    ViewBag.Title = "XoaXe";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+<h2>XÓA XE</h2>
+
+<h3>CHẮC CHẮN XÓA ?</h3>
+
+<div>
+    <h4>PHUONGTIEN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID PHƯƠNG TIỆN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDPT)
+        </dd>
+
+        <dt>
+           TÊN XE
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENPT)
+        </dd>
+
+        <dt>
+           LOẠI
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOAIPT)
+        </dd>
+
+        <dt>
+            SỨC CHỨA
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SUCCHUA)
+        </dd>
+
+        <dt>
+           ẢNH
+        </dt>
+
+        <dd>
+            <img style="width: 50%" src="@Url.Content("~/PIC/PicHome/XePic/"+ Model.ANH)" alt="Alternate Text" />
+        </dd>
+
+        <dt>
+            MÔ TẢ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List","ThueXe")
+        </div>
+    }
+</div>

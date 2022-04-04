@@ -1,0 +1,70 @@
+﻿@using DOANWEBDULICH.Models
+@using PagedList.Mvc;
+@model PagedList.PagedList<DOANWEBDULICH.Models.VEXE>
+
+
+
+@helper Truncate(string input, int length)
+{
+    if (input.Length < length)
+    {
+        @input
+    }
+    else
+    {
+        @input.Substring(0, length)<text>...</text>
+    }
+}
+@{
+    ViewBag.Title = "VeXe";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2>VeXe</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th style="width:200px"> ID PT </th>
+        <th style="width: 300px"> NGÀY XUẤT PHÁT </th>
+        <th style="width: 300px"> KHÁCH HÀNG </th>
+        <th style="width: 300px">  XE  </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDVEXE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NGAYXP)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KHACHHANG.TENKH)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PHUONGTIEN.TENPT)
+            </td>
+            <td>
+                @Html.ActionLink("Chi Tiết", "Chitietvexe", new { id = item.IDVEXE }) |
+                @Html.ActionLink("Xóa", "XoaVeXe", new { id = item.IDVEXE })
+            </td>
+        </tr>
+    }
+
+</table>
+@* Tao liên kết các trang  *@
+Trang @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber)/@Model.PageCount;
+<div class="MenuTrang">
+
+    @Html.PagedListPager(Model, page => Url.Action("VeXe", new { page = page }))
+</div>
+<style>
+    .MenuTrang li {
+        display: inline;
+    }
+</style>

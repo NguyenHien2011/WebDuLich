@@ -1,0 +1,66 @@
+﻿@model DOANWEBDULICH.Models.PHUONGTIEN
+
+@{
+    ViewBag.Title = "Chitietxe";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+
+<h2>CHI TIẾT XE</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ID PHƯƠNG TIỆN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDPT)
+        </dd>
+        <dt>
+            TÊN XE
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TENPT)
+        </dd>
+
+        <dt>
+            LOẠI XE
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LOAIPT)
+        </dd>
+
+        <dt>
+            SỨC CHỨA
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SUCCHUA)
+        </dd>
+
+        <dt>
+            ẢNH
+        </dt>
+
+        <dd>
+            <img style="width: 50%" src="@Url.Content("~/PIC/PicHome/XePic/"+ Model.ANH)" alt="Alternate Text" />
+        </dd>
+
+        <dt>
+            MÔ TẢ
+        </dt>
+
+        <dd style="width: 600px; text-align: justify">
+            @Html.DisplayFor(model => model.MOTA)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "ThueXe")
+</p>

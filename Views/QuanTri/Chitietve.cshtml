@@ -1,0 +1,46 @@
+﻿@model DOANWEBDULICH.Models.VETOUR
+
+@{
+    ViewBag.Title = "Chitietve";
+    Layout = "~/Views/Layout/_LayoutAdmin.cshtml";
+}
+
+<h2>CHI TIẾT VÉ TOUR</h2>
+<style>
+    #lh{
+        line-height: 3.5;
+        font-size: 20px;
+    }
+</style>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt id="lh" >
+           ID VÉ
+        </dt>
+
+        <dd id="lh" >
+            @Html.DisplayFor(model => model.IDVE)
+        </dd>
+
+        <dt id="lh" >
+            TOUR
+        </dt>
+
+        <dd id="lh" >
+            @Html.DisplayFor(model => model.TOURDULICH.TENTOUR)
+        </dd>
+
+        <dt id="lh" > 
+           KHÁCH HÀNG
+        </dt>
+
+        <dd id="lh" >
+            @Html.DisplayFor(model => model.KHACHHANG.TENKH)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "VeTour")
+</p>
